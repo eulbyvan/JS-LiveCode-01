@@ -6,7 +6,11 @@ function App() {
 
     let parkingLot = parkingService.createParkingLot(10);
 
-    parkingLot.then(parkinglot => console.log(parkingLot));
+    parkingLot.then(p => {
+        parkingService.park(p, new Car('stu', 'pid'))
+            .then(msg => console.log(msg))
+            .catch(msg => console.log(msg));
+    });
 }
 
 App();
