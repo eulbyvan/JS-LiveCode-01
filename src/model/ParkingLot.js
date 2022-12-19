@@ -1,6 +1,6 @@
 export default class ParkingLot {
-    constructor(size = 5) {
-        this.size = size;
+    constructor(size) {
         this.slot = [];
+        this.size = size;
     }
 }

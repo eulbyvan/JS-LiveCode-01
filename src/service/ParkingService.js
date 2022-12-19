@@ -7,22 +7,23 @@ export default class ParkingService {
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     console.log(`a new parking lot with the capacity of ${size} vehicle(s) has been created successfully`);
+                    resolve(new ParkingLot(size));
                 }, 5000);
-                resolve(new ParkingLot(size));
             });
         };
 
         this.park = (parkingLot, car) => {
             return new Promise((resolve, reject) => {
-                if (parkingLot.slot.length < parkingLot.size) {
-                    setTimeout(() => {
+                setTimeout(() => {
+                    console.log('testt', parkingLot);
+                    if (parkingLot.slot.length < parkingLot.size) {
                         parkingLot.slot.push(car);
 
                         resolve(`${car.owner}'s car with plate number ${car.plateNum} has been parked successfully`);
-                    }, 3000);
-                } else {
-                    reject('parking lot is full!');
-                }
+                    } else {
+                        reject('parking lot is full!');
+                    }
+                }, 3000);
             });
         };
 

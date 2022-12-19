@@ -1,6 +1,6 @@
 export default class Car {
-    constructor(owner = '', plateNumber = '') {
+    constructor(owner, plateNum) {
         this.owner = owner;
-        this.plateNumber = plateNumber;
+        this.plateNum = plateNum.toUpperCase();
     }
 }
